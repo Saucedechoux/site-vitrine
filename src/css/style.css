@@ -1,23 +1,29 @@
 @import url("reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
 
+:root {
+    --main-color: #0182d4;
+    --second-color: #00c3d3;
+    --third-color: #00dcaf;
+}
+
 /* HEADER */
 
 header {
-    height: 80px;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 img.logo {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin: 0 0 0 1em;
     cursor: pointer;
 }
 
-button.main-button, button.light-button {
+button.main-button, button.light-button, button.focus-button {
     font-family: "Space Grotesk", sans-serif;
     float: right;
     outline: none;
@@ -25,21 +31,26 @@ button.main-button, button.light-button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #7C83FD;
+    background-color: var(--main-color);
     color: white;
     font-size: 0.90rem;
 }
 
 button.light-button {
-    border: solid 1px #7C83FD;
+    border: solid 1px var(--main-color);
     background-color: transparent;
-    color: #7C83FD;
+    color: var(--main-color);
     transition: color 0.3s;
     transition: background-color 0.3s;
 }
 
+button.focus-button {
+    background-color: var(--third-color);
+    color: #00362b;
+}
+
 button.light-button:hover {
-    background-color: #7C83FD;
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -55,7 +66,7 @@ button.light-button:hover {
 
 .container-links a {
     font-family: "Space Grotesk", sans-serif;
-    color: #7C83FD;
+    color: var(--main-color);
     text-decoration: none;
     margin-left: 1.5em;
     position: relative;
@@ -66,7 +77,7 @@ button.light-button:hover {
     content: "";
     position: absolute;
     bottom: -2px;
-    background-color: #7C83FD;
+    background-color: var(--main-color);
     width: 100%;
     height: 1px;
     transform-origin: 100% 0;
@@ -79,4 +90,33 @@ button.light-button:hover {
     transform: scaleX(1);
 }
 
+/* LANDING IMAGE */
 
+.landing-img {
+    width: 100%;
+    height: 700px;
+    background-image: url("../img/bg-turtle.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.landing-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 30%;
+    left: 5%;
+}
+
+.landing-title {
+    font-size: 2rem;
+    font-family: "Space Grotesk", sans-serif;
+    color: white;
+    text-shadow: 1px 1px 3px #000;
+}
+
+#landing-button {
+    margin-top: 1.5em;
+}
